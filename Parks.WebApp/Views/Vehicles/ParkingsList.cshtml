@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Parks.WebApp.Models.Entities.Vehicle>
+@{
+    ViewData["Title"] = "ParkingsList";
+}
+
+<h2>ParkingsList</h2>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>
+            <a asp-action="ParkingsList" asp-route-id="@ViewBag.SortVehicleTypeName" class="thcolor" asp-controller=""> Owner name</a>
+            </th>
+          </tr>
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.VehicleOwners.Name )</td>
+
+        
+            </tr>
+         }
+        </tbody>
+
+    </table>

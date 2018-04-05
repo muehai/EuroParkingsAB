@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Parks.WebApp.Models.Entities.Owner>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Total vehicle owners</h2>
+<form asp-controller="Owners" asp-action="Index" method="post" role="form">
+    <hr />
+    <div class="form-group">
+        <div class="row">
+            <div class="form-actions no-color">
+                <p>
+                    Search vehicle owner by their names and person numbers:
+                    <input type="search" name="searchTerm" class="input-sm" />
+                    <input type="submit" name="search" class="btn-success" />
+                </p>
+                </div>
+            </div>
+        </div>
+</form>
+
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add new owner</a>
+</p>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.OwnerPersonalId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerPersonalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

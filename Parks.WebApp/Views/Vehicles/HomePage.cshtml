@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Parks.WebApp.Models.Entities.Vehicle>
+
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Welcome to Europark!</h2>
+<div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active ">
+                <img id="caropic" src="~/images/europark-p-city.jpg" class="img-responsive main-image" />
+            </div>
+            <div class="item ">
+
+                <img id="caropic" src="~/images/europark-p-city.jpg" class="img-responsive main-image" />
+                <div class="carousel-caption ">
+                    <h2 style="font-size:50px;color:#1486d1">ONLY 60 SEK/HOUR</h2>
+
+                </div>
+
+            </div>
+
+            <div class="item ">
+
+                <img id="caropic" src="~/images/europark_mobil.jpg" class="img-responsive main-image" />
+                <div class="carousel-caption img-responsive">
+                </div>
+            </div>
+            <div class="item">
+                <img id="caropic" src="~/images/europark-p-city.jpg" class="img-responsive main-image" />
+                <div class="carousel-caption img-responsive">
+
+
+                    <img src="~/images/Rentcar.jpg" class="img-responsive" />
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6" style="font-size:20px" id="mainparagraph">
+        <p>
+            Europark is one of the biggest parking company in Europ. We are all in europ.
+            Parking cost is less exprensive from our main competitors. our parkig garage are mainly located in
+            central Stockholm and it costs 60 SEK for one hour.
+                    
+        </p>
+    </div>
+    
+      <div class="col-md-6" style="font-size:25px;color:green; text-align:center">Europarking is not full,  
+                please park your vehicle. @ViewBag.parkedvehiclefigur/@ViewBag.ParingCapacity </div>
+        
+      <div class="col-md-6" style="font-size:25px;color:red;text-align:center;">@ViewBag.ParkingInformation </div>
+        
+    
+    
+
+</div>

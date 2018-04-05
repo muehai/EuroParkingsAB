@@ -1,0 +1,90 @@
+﻿@model Parks.WebApp.Models.Entities.Vehicle
+
+@{
+    ViewData["Title"] = "CheckIn";
+}
+
+<h2>CheckIn</h2>
+
+<div class="container">
+    <div class="row">
+        <h2 id="#">WELCOME TO EUROPARKING AB</h2>
+    </div>
+    <div id="divHeading" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <br /><img id="imglogo" src="~/images/logo_europarkParking.jpg" />
+        </div>
+        <div class="col-md-3 ">
+            <br />
+            <h4 style="color:white">
+                SecurityPark AB<br />
+                S:t görangatan  21<br />
+                163 45 Stadhagen <br />
+                +46-834534646
+            </h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>PARKING DATETIME</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@DateTime.Now</h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>REGISTER NUMBER:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>
+                @Html.DisplayFor(model => model.RegisterNr)    
+              
+            </h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>PARKING SPACE:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4> @ViewBag.GarageCapacity</h4>
+
+        </div>
+    </div>
+
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>GARAGE STATUS:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@ViewBag.NoFreeParkSpace cars are parked!</h4>
+        </div>
+    </div>
+
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>CHECK IN :</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4> @ViewBag.Hours Hours and  @ViewBag.Minutes Minutes </h4>
+
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row" style="color: dodgerblue">
+        <blink><h2 class="text-center">THANK FOR PARKING IN OUR GARAGE</h2></blink>
+    </div>
+</div> @* End container *@
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+﻿@model Parks.WebApp.Models.Entities.Vehicle
+
+@{
+    ViewData["Title"] = "Receipt";
+}
+
+<div class="container">
+    <div class="row">
+        <h2 id="#">PARKING RECEIPT</h2>
+    </div>
+    <div id="divHeading" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <br /><img id="imglogo" src="~/images/logo_europarkParking.jpg" />
+        </div>
+        <div class="col-md-3 ">
+            <br />
+            <h4 style="color:white">
+                SecurityPark AB<br />
+                S:t görangatan  21<br />
+                163 45 Stadhagen <br />
+                +46-834534646
+            </h4>
+        </div>
+    </div>
+
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>DATE TIME:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@DateTime.Now</h4>
+         </div>
+    </div>
+    
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>REGISTER NUMBER:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@Html.DisplayFor(model => model.RegisterNr)</h4>
+         </div>
+        <div class="col-md-4"></div>
+    </div>
+
+  
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>FROM:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@Html.DisplayFor(model => model.ParkingTime)</h4>
+       </div>
+     </div>
+    
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>TO:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@DateTime.Now</h4>
+         </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>PRICE PER HOUR:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>60 SEK per hour</h4>
+        </div>
+     </div>
+  
+      <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>TOTAL PARKING TIME:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@ViewBag.Hours hours and @ViewBag.Minutes minutes</h4>
+       </div>
+       </div>
+    
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>RECEIPT TO PAY:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@((ViewBag.Hours * 60) + (1 * ViewBag.Minutes)) SEK</h4>
+           
+        </div>
+      
+    </div>
+    <div id="divStyleVehicle" class="row" style="color:dodgerblue;">
+    <blink><h2 class="text-center">THANK YOU PARKING WITH US!</h2></blink></div>
+</div>
+
+
+
+

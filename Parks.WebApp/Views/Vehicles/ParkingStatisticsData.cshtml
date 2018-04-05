@@ -1,0 +1,67 @@
+﻿@model Parks.WebApp.Models.Entities.Vehicle
+@{
+    ViewData["Title"] = "ParkingStatisticsData";
+}
+
+<div class="container">
+    <div class="row">
+        <h2 id="#">Parking data statistics</h2>
+    </div>
+    <div id="divHeading" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <br /><img id="imglogo" src="~/images/logo_europarkParking.jpg" />
+        </div>
+        <div class="col-md-3 ">
+            <br />
+            <h4 style="color:white">
+                SecurityPark AB<br />
+                S:t görangatan  21<br />
+                163 45 Stadhagen <br />
+                +46-834534646
+            </h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>Total number of vehicles in the garage now</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@ViewBag.OccupiedParkingSpaces</h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>Total parking time, minutes, for parked vehicles now:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>
+                @ViewBag.TotalParkingMinutes minutes
+
+            </h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>Total parking value for parked vehicles now:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4> @ViewBag.TotalParkingValue kr.</h4>
+
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row" style="color: dodgerblue">
+        <blink><h2 class="text-center">THANK FOR PARKING IN OUR GARAGE</h2></blink>
+    </div>
+</div> @* End container *@
+
+
+
+
+
+
+
+

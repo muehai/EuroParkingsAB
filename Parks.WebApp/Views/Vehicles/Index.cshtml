@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Parks.WebApp.Models.Entities.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>It shows all parked vehicles</h2>
+<form asp-controller="Vehicles" asp-action="Index" method="post" role="form">
+    <hr />
+    <div class="form-group">
+        <div class="row">
+            <div class="form-actions no-color">
+                <p>
+                    Search vehicles by customer names and connection type:
+                    <input type="text" name="SearchTerm" value="@ViewData["VehicleFilteData"]" />
+                    <input type="submit" value="Search" class="btn btn-success" /> |
+                    <a asp-action="Index" class="btn btn-primary"> Back vehicles list </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+ </form>
+
+<h2 style="color:red">@ViewBag.FoundMessage</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-success">Park your car</a>
+    </p>
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RegisterNr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParkingTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleOwners)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RegisterNr)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VehicleTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Model)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ParkingTime)
+                    </td>
+                   
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

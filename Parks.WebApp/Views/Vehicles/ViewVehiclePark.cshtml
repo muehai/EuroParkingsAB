@@ -1,0 +1,56 @@
+﻿@model Parks.WebApp.Models.Entities.Vehicle
+
+@{
+    ViewData["Title"] = "ViewVehiclePark";
+}
+
+<h2>ViewVehiclePark</h2>
+
+<div class="container">
+    <div class="row">
+        <h2 id="#">Parking status Information</h2>
+    </div>
+    <div id="divHeading" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <br /><img id="imglogo" src="~/images/logo_europarkParking.jpg" />
+        </div>
+        <div class="col-md-3 ">
+            <br />
+            <h4 style="color:blue">
+                SecurityPark AB<br />
+                S:t görangatan  21<br />
+                163 45 Stadhagen <br />
+                +46-834534646
+            </h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-4">
+            <h4><strong>PARKING DATETIME</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4>@DateTime.Now</h4>
+        </div>
+    </div>
+    <div id="divStyleVehicle" class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <h4><strong>PARKING STATUS:</strong></h4>
+        </div>
+        <div class="col-md-3">
+            <h4> @ViewBag.NoFreeParkSpace</h4>
+        </div>
+    </div>
+
+    <div id="divStyleVehicle" class="row" style="color:red">
+        <blink><h2>SORRY THE GARAGE IS FULL FOR THE MOMENT!!!</h2></blink>
+    </div>
+</div> @* End container *@
+
+<p>
+      @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+

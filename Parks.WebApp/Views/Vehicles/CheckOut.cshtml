@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Parks.WebApp.Models.Entities.Vehicle>
+
+@{
+    ViewData["Title"] = "CheckOut";
+}
+
+<h2>CheckOut your vehicle</h2>
+
+<form asp-controller="Vehicles" asp-action="CheckOut" method="get" role="form">
+    <hr />
+    <div class="form-group">
+        <div class="row">
+            <div class="form-actions no-color">
+                <p>
+                    Search vehicle register number:
+                    <input type="search" name="searchTerm" class="input-sm" />
+                    <input type="submit" name="search" class="btn-primary" />
+                </p>
+                <p>(Register number:xxx123)</p>
+            </div>
+        </div>
+    </div>
+   
+</form>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.RegisterNr)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Color)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParkeringSpaceId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ParkingTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VehicleTypeName)
+                </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegisterNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkeringSpaceId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleTypeName)
+            </td>
+           
+            <td>
+                
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Checkout</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
